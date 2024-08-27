@@ -136,14 +136,14 @@ if __name__ == '__main__':
     fiberClient2 = FiberRPCClient(NODE2_RPC_URL)
 
     # connected node1 and node2
-    # fiberClient1.connect_peer({"address": NODE2_ADDR})
-    # time.sleep(10)
-    #
-    # # open channel node1 < - > node2
-    # fiberClient1.open_channel({
-    #     "peer_id": NODE2_PEERID,
-    #     "funding_amount": hex(2000 * 100000000)
-    # })
+    fiberClient1.connect_peer({"address": NODE2_ADDR})
+    time.sleep(10)
+    
+    # open channel node1 < - > node2
+    fiberClient1.open_channel({
+        "peer_id": NODE2_PEERID,
+        "funding_amount": hex(2000 * 100000000)
+    })
 
     # wait channel open successful : channel statue: wait
     wait_for_channel_state(fiberClient1, NODE2_PEERID, "CHANNEL_READY", 120)

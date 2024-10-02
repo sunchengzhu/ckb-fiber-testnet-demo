@@ -25,7 +25,7 @@ cp target/release/fnn tmp
 cp ckb_v0.117.0_aarch64-apple-darwin-portable/ckb-cli tmp
 ```
 
-### Configure two fiber nodes
+### Configure 3 fiber nodes
 
 node1
 

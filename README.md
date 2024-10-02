@@ -78,14 +78,7 @@ RUST_LOG=info ./fnn -c testnet-fnn/node2/config.yml -d testnet-fnn/node2
 RUST_LOG=debug ./fnn -c testnet-fnn/node3/config.yml -d testnet-fnn/node3
 
 ```
-NODE1_PEERID = "QmY8dEogQ4GK2KwZLmrtnJLULAuWuE8yPDqzegMjD7LmM7"
-NODE1_ADDR = "/ip4/127.0.0.1/tcp/8228/p2p/QmY8dEogQ4GK2KwZLmrtnJLULAuWuE8yPDqzegMjD7LmM7"
-NODE2_ADDR = "/ip4/127.0.0.1/tcp/8229/p2p/QmY8dEogQ4GK2KwZLmrtnJLULAuWuE8yPDqzegMjD7LmM7"
-NODE3_ADDR = "/ip4/127.0.0.1/tcp/8231/p2p/QmY8dEogQ4GK2KwZLmrtnJLULAuWuE8yPDqzegMjD7LmM7"
 
-/ip4/127.0.0.1/tcp/8228
-/ip4/127.0.0.1/tcp/8229
-/ip4/127.0.0.1/tcp/8231
 
 ### Create a 1000 CKB channel for node1(1000ckb) -> node2(0)
 
@@ -247,26 +240,6 @@ curl --location 'http://127.0.0.1:8227' --header 'Content-Type: application/json
     ]
 }'
 {"jsonrpc":"2.0","result":{"payment_hash":"0xd1825993e014d7761b0e2ada735f4f632a3cd33e269364d3711370b47aeb7bfc"},"id":42}
-```
-
-
-Node 2 provides payment_preimage
-
-```shell
-curl --location 'http://127.0.0.1:8231' --header 'Content-Type: application/json' --data '{
-    "id": 42,
-    "jsonrpc": "2.0",
-    "method": "remove_tlc",
-    "params": [
-        {
-            "channel_id": "0x2329a1ced09d0c9eff46068ac939596bb657a984b1d6385db563f2de837b8879",
-            "tlc_id": "0x0",
-            "reason": {
-                "payment_preimage": "0xab788595c4d6c2dd2e5435f39314ebd62e8df90df80e2d6c9584e88101805a5d"
-            }
-        }
-    ]
-}'
 ```
 
 Check balance

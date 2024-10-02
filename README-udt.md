@@ -7,7 +7,9 @@ gi t# ckb-fiber-testnet-demo
 - Node 1 transfer 1USD to node 3 via the channel use ln-address
 - Close Channel
 
-
+### faucet
+- ckb: https://faucet.nervos.org/
+- RUSD: https://testnet0815.stablepp.xyz/stablecoin
 
 ###  compile project
 

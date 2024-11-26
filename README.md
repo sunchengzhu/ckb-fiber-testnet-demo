@@ -33,6 +33,8 @@ node1
 ```
 cd tmp
 mkdir -p testnet-fnn/node1/ckb
+# Ensure that `announce_private_addr: true` is configured under fiber in config.yml.
+cat ../config/testnet/config.yml | grep announce_private_addr
 cp ../config/testnet/config.yml testnet-fnn/node1
 ./ckb-cli account new  
 ./ckb-cli account export  --lock-arg 0x30c54eb6b4ddb48b9335420abe0813e3e67f46e1 --extended-privkey-path exported-key
